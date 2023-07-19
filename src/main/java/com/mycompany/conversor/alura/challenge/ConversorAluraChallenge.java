@@ -3,50 +3,47 @@
  */
 package com.mycompany.conversor.alura.challenge;
 
-import javax.swing.JOptionPane;
+import java.awt.GridBagLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
-/**
- *
- * @author mario
- */
 public class ConversorAluraChallenge {
-    
+
     public static void main(String[] args) {
-        
-    }
-    
-    public static void principalMenu(String[] args) {
-        String name = JOptionPane.showInputDialog("Type your name please");
-        JOptionPane.showMessageDialog(null, "Hello " + name);
+
+        // componente JFrame
+        JFrame miJFrame = new JFrame("Ejemplo - Java Swing");
+        miJFrame.setSize(500, 300);
+        // componente JPanel`
+
+        JPanel miJPanel = new JPanel();
+
+        miJPanel.setSize(300, 300);
+
+        // usamos este diseño para centrar los componentes de JPanel`
+        miJPanel.setLayout(new GridBagLayout());
+
+        // componente JTextField`
+        JLabel miJLabel = new JLabel();
+
+        miJLabel.setText("Dime tu opinión acerca de Java Swing:  ");
+
+        // componente JTextArea
+        JTextArea miJTextArea = new JTextArea(5, 20);
+
+        // conecta los componentes JLabel y JTextField en JPanel`
+        miJPanel.add(miJLabel);
+
+        miJPanel.add(miJTextArea);
+
+        // conectar Jpanel a JFrame`
+        miJFrame.add(miJPanel);
+
+        // hacer visible JFrame
+        miJFrame.setVisible(true);
+
     }
 
-    public static void conversionValue(String[] args) {
-        JOptionPane.showMessageDialog(null, "Hello World");
-    }
-
-    public static void coinOptions(String[] args) {
-        String name = JOptionPane.showInputDialog("Type your name please");
-        JOptionPane.showMessageDialog(null, "Hello " + name);
-    }
-
-    public static void valueEntry(String[] args) {
-        String name = JOptionPane.showInputDialog("Type your name please");
-        JOptionPane.showMessageDialog(null, "Hello " + name);
-    }
-
-    public static void errorHandling(String[] args) {
-        JOptionPane.showMessageDialog(null, "Hello World");
-    }
-
-    public static void continueProgram(String[] args) {
-
-        int input = JOptionPane.showConfirmDialog(null, "¿Desea continuar?");
-        // 0=yes, 1=no, 2=cancel
-        System.out.println(input);
-    }
-    
-    public static void finishProgram(String[] args) {
-        JOptionPane.showMessageDialog(null, "Hello World");
-    }
-    
 }
